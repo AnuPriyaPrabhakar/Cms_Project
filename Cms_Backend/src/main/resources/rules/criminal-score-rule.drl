@@ -1,0 +1,9 @@
+import com.ponsun.cms.algorithm.cdo.CriminalRuleCDO;
+
+rule "Check criminal score"
+    when
+        criminalRuleCDO : CriminalRuleCDO(score1 >= searchScore || score2 >= searchScore);
+    then
+        criminalRuleCDO.setStatus("success");
+
+end;
